@@ -49,8 +49,15 @@ const SignIn = (props) => {
         }
         console.log(found);
         if (!found) {
-            console.log("Credenciales correctas");
+            const newUser = {
+                "username": inputUser,
+                "password": inputPassword,
+                "email": inputEmail
+            };
+            props.updateUsers(current => [...current, newUser]);
             props.updateSession(true);
+            props.changeLogIn(true);
+            props.changeUser(inputUser);
         }
     }
 

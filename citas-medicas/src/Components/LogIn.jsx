@@ -21,7 +21,8 @@ const LogIn = (props) => {
             if (props.users[i]["username"] === inputUser) {
 
                 if (props.users[i]["password"] === inputPassword) {
-                    found = true
+                    found = true;
+                    props.changeUser(inputUser);
                     props.updateSession(true);
                     return
                 }

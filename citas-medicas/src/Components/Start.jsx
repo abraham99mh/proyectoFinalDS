@@ -4,34 +4,9 @@ import DateFnsUtils from '@date-io/date-fns'
 import HoursTable from './HoursTable';
 import Citas from './Citas';
 
-const Start = () => {
+const Start = (props) => {
 
     const [dateSelected, changeDate] = useState(new Date(2022, 10, 28));
-
-    const [data, updateData] = useState([
-        {
-            "id": "1",
-            "date": new Date(2022, 10, 28),
-            "hour": "9:00",
-            "name": "",
-            "type": ""
-        },
-        {
-            "id": "2",
-            "date": new Date(2022, 10, 28),
-            "hour": "11:00",
-            "name": "",
-            "type": ""
-        },
-        {
-            "id": "3",
-            "date": new Date(2022, 10, 28),
-            "hour": "14:00",
-            "name": "",
-            "type": ""
-        },
-
-    ]);
 
     return (
         <div className='container mt-3'>
@@ -48,11 +23,11 @@ const Start = () => {
                         </div>
                     </div>
                     <div className='row'>
-                        <HoursTable data={data} updateData={updateData} dateSelected={dateSelected} />
+                        <HoursTable data={props.data} updateData={props.updateData} dateSelected={dateSelected} user={props.user} />
                     </div>
                 </div>
                 <div className='col-auto'>
-                    <Citas />
+                    <Citas user={props.user} />
                 </div>
             </div>
         </div>)
