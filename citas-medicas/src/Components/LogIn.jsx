@@ -54,7 +54,6 @@ const LogIn = (props) => {
                             <button className='btn btn-outline-info ' onClick={clickSignIn}>Registrarse</button>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
