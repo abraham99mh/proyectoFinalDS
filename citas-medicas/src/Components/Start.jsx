@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers"
-import DateFnsUtils from '@date-io/date-fns'
+// import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers"
+// import DateFnsUtils from '@date-io/date-fns'
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+
 import HoursTable from './HoursTable';
 import Citas from './Citas';
 
 const Start = (props) => {
 
-    const [dateSelected, changeDate] = useState(new Date(2022, 10, 29));
+    const [dateSelected, changeDate] = useState(new Date(2022, 10, 30));
 
     return (
         <div className='container-fluid mt-3'>
@@ -17,9 +20,10 @@ const Start = (props) => {
                             Seleccione fecha:
                         </div>
                         <div className='col-auto px-0 ps-3'>
-                            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                            <ReactDatePicker selected={dateSelected} onChange={changeDate} />
+                            {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
                                 <DatePicker value={dateSelected} onChange={changeDate} />
-                            </MuiPickersUtilsProvider>
+                            </MuiPickersUtilsProvider> */}
                         </div>
                     </div>
                     <div className='row'>
