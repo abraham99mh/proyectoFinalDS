@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 
 const HoursTable = ({ data, updateData, dateSelected, user }) => {
@@ -45,6 +45,7 @@ const HoursTable = ({ data, updateData, dateSelected, user }) => {
 
     const handleClose = () => setShowModal(false);
     const handleShow = (e) => {
+        setType(types[0]);
         setHourSelected(e.target.value);
         setShowModal(true);
     }
@@ -80,7 +81,7 @@ const HoursTable = ({ data, updateData, dateSelected, user }) => {
         }
     }
 
-    const onChangeDrop = (e) =>{
+    const onChangeDrop = (e) => {
         setType(e.target.value);
     }
 
@@ -95,12 +96,12 @@ const HoursTable = ({ data, updateData, dateSelected, user }) => {
                         <div className="input-group mb-3">
                             <label className="input-group-text" htmlFor="inputGroupSelect01">Tipo de cita</label>
                             <select onChange={onChangeDrop} className="form-select" id="inputGroupSelect01">
-                                {types.map((t, i)=>{
-                                    return(
+                                {types.map((t, i) => {
+                                    return (
                                         <option key={i} value={t}>{t}</option>
                                     )
                                 })}
-                                
+
                             </select>
                         </div>
                         <div className="input-group mb-3">

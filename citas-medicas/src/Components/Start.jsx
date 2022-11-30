@@ -6,12 +6,12 @@ import Citas from './Citas';
 
 const Start = (props) => {
 
-    const [dateSelected, changeDate] = useState(new Date(2022, 10, 28));
+    const [dateSelected, changeDate] = useState(new Date(2022, 10, 29));
 
     return (
         <div className='container mt-3'>
             <div className='row pt-3'>
-                <div className='col-auto me-4'>
+                <div className='col-6 col-lg-auto me-lg-4'>
                     <div className='row'>
                         <div className='col-auto fs-4'>
                             Seleccione fecha:
@@ -26,8 +26,8 @@ const Start = (props) => {
                         <HoursTable data={props.data} updateData={props.updateData} dateSelected={dateSelected} user={props.user} />
                     </div>
                 </div>
-                <div className='col-auto'>
-                    <Citas user={props.user} />
+                <div className='col-6 col-lg-7'>
+                    <Citas user={props.user} data={props.data} />
                 </div>
             </div>
         </div>)
