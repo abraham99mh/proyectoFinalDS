@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { MuiPickersUtilsProvider, DatePicker } from "@material-ui/pickers"
-// import DateFnsUtils from '@date-io/date-fns'
 import ReactDatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -21,9 +19,6 @@ const Start = (props) => {
                         </div>
                         <div className='col-auto px-0 ps-3'>
                             <ReactDatePicker selected={dateSelected} onChange={changeDate} />
-                            {/* <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                                <DatePicker value={dateSelected} onChange={changeDate} />
-                            </MuiPickersUtilsProvider> */}
                         </div>
                     </div>
                     <div className='row'>
